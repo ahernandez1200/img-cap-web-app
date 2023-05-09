@@ -1,4 +1,4 @@
-import config from './config';
+// import config from './config.js';
 import React, { useState, useEffect } from 'react';
 import AWS from 'aws-sdk';
 import './App.css';
