@@ -1,3 +1,4 @@
+import config from './config';
 import React, { useState, useEffect } from 'react';
 import AWS from 'aws-sdk';
 import './App.css';
@@ -9,6 +10,13 @@ function App() {
 
   useEffect(() => {
     if (b64Image) {
+      console.log('App working...')
+
+      AWS.config.update({
+        accessKeyId: config.awsAccessKeyId,
+        secretAccessKey: config.awsSecretAccessKey,
+        region: 'us-east-2',
+        });
 
       const lambda = new AWS.Lambda({
         region: 'us-east-2',
